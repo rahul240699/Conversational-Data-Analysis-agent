@@ -635,3 +635,188 @@ result = {'type': 'plot', 'value': '/Users/rahulsohandani/Desktop/conversational
 2025-07-18 10:22:41 [INFO] Executing Step 7: ResultValidation
 2025-07-18 10:22:41 [INFO] Answer: {'type': 'plot', 'value': '/Users/rahulsohandani/Desktop/conversational-analysis-chatbot/exports/charts/temp_chart.png'}
 2025-07-18 10:22:41 [INFO] Executing Step 8: ResultParsing
+2025-07-18 13:13:39 [INFO] Question: What's the median value of median_house_value?
+2025-07-18 13:13:39 [INFO] Running PandasAI with openai LLM...
+2025-07-18 13:13:39 [INFO] Prompt ID: 28a8cffd-83b3-47d3-a21b-5624c2e10857
+2025-07-18 13:13:39 [INFO] Executing Pipeline: GenerateChatPipeline
+2025-07-18 13:13:39 [INFO] Executing Step 0: ValidatePipelineInput
+2025-07-18 13:13:39 [INFO] Executing Step 1: CacheLookup
+2025-07-18 13:13:39 [INFO] Using cached response
+2025-07-18 13:13:39 [INFO] Executing Step 2: PromptGeneration
+2025-07-18 13:13:39 [INFO] Executing Step 2: Skipping...
+2025-07-18 13:13:39 [INFO] Executing Step 3: CodeGenerator
+2025-07-18 13:13:40 [INFO] Executing Step 3: Skipping...
+2025-07-18 13:13:40 [INFO] Executing Step 4: CachePopulation
+2025-07-18 13:13:40 [INFO] Executing Step 4: Skipping...
+2025-07-18 13:13:40 [INFO] Executing Step 5: CodeCleaning
+2025-07-18 13:13:40 [INFO] 
+Code running:
+```
+combined_df = pd.concat(dfs, ignore_index=True)
+median_house_value = combined_df['median_house_value'].median()
+result = {'type': 'number', 'value': median_house_value}
+print(result)
+        ```
+2025-07-18 13:13:40 [INFO] Executing Step 6: CodeExecution
+2025-07-18 13:13:40 [INFO] Executing Step 7: ResultValidation
+2025-07-18 13:13:40 [INFO] Answer: {'type': 'number', 'value': 179700.0}
+2025-07-18 13:13:40 [INFO] Executing Step 8: ResultParsing
+2025-07-18 14:51:37 [INFO] Question: how much is the correlation between population and median house value?
+2025-07-18 14:51:37 [INFO] Running PandasAI with openai LLM...
+2025-07-18 14:51:37 [INFO] Prompt ID: c0d3eaf7-1662-4021-9f01-3c255c820873
+2025-07-18 14:51:37 [INFO] Executing Pipeline: GenerateChatPipeline
+2025-07-18 14:51:37 [INFO] Executing Step 0: ValidatePipelineInput
+2025-07-18 14:51:37 [INFO] Executing Step 1: CacheLookup
+2025-07-18 14:51:37 [INFO] Using cached response
+2025-07-18 14:51:37 [INFO] Executing Step 2: PromptGeneration
+2025-07-18 14:51:37 [INFO] Executing Step 2: Skipping...
+2025-07-18 14:51:37 [INFO] Executing Step 3: CodeGenerator
+2025-07-18 14:51:37 [INFO] Executing Step 3: Skipping...
+2025-07-18 14:51:37 [INFO] Executing Step 4: CachePopulation
+2025-07-18 14:51:37 [INFO] Executing Step 4: Skipping...
+2025-07-18 14:51:37 [INFO] Executing Step 5: CodeCleaning
+2025-07-18 14:51:37 [INFO] 
+Code running:
+```
+df = pd.concat(dfs, ignore_index=True)
+correlation = df['population'].corr(df['median_house_value'])
+result = {'type': 'number', 'value': correlation}
+print(result)
+        ```
+2025-07-18 14:51:37 [INFO] Executing Step 6: CodeExecution
+2025-07-18 14:51:37 [INFO] Executing Step 7: ResultValidation
+2025-07-18 14:51:37 [INFO] Answer: {'type': 'number', 'value': -0.024649678888894903}
+2025-07-18 14:51:37 [INFO] Executing Step 8: ResultParsing
+2025-07-18 14:51:39 [INFO] Question: plot the histogram for this dataset for median_income
+2025-07-18 14:51:39 [INFO] Running PandasAI with openai LLM...
+2025-07-18 14:51:39 [INFO] Prompt ID: a7b035d9-62a5-4eca-8344-bd0eef9ad775
+2025-07-18 14:51:39 [INFO] Executing Pipeline: GenerateChatPipeline
+2025-07-18 14:51:39 [INFO] Executing Step 0: ValidatePipelineInput
+2025-07-18 14:51:39 [INFO] Executing Step 1: CacheLookup
+2025-07-18 14:51:39 [INFO] Executing Step 2: PromptGeneration
+2025-07-18 14:51:39 [INFO] Using prompt: <dataframe>
+dfs[0]:20640x10
+longitude,latitude,housing_median_age,total_rooms,total_bedrooms,population,households,median_income,median_house_value,ocean_proximity
+-121.38,36.39,40.0,4975.0,1765.0,653.0,1080.0,5.5756,173300.0,<1H OCEAN
+-116.69,37.89,35.0,1012.0,,906.0,667.0,7.0879,178100.0,ISLAND
+-118.1,41.15,48.0,1626.0,1442.0,323.0,1219.0,5.3813,212500.0,NEAR OCEAN
+</dataframe>
+
+
+
+
+Update this initial code:
+```python
+# TODO: import the required dependencies
+import pandas as pd
+
+# Write code here
+
+# Declare result var: 
+type (possible values "string", "number", "dataframe", "plot"). Examples: { "type": "string", "value": f"The highest salary is {highest_salary}." } or { "type": "number", "value": 125 } or { "type": "dataframe", "value": pd.DataFrame({...}) } or { "type": "plot", "value": "temp_chart.png" }
+
+```
+
+
+
+### QUERY
+ plot the histogram for this dataset for median_income
+
+Variable `dfs: list[pd.DataFrame]` is already declared.
+
+At the end, declare "result" variable as a dictionary of type and value.
+
+If you are asked to plot a chart, use "matplotlib" for charts, save as png.
+
+
+Generate python code and return full updated code:
+2025-07-18 14:51:39 [INFO] Executing Step 3: CodeGenerator
+2025-07-18 14:51:44 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-18 14:51:44 [INFO] Prompt used:
+            <dataframe>
+dfs[0]:20640x10
+longitude,latitude,housing_median_age,total_rooms,total_bedrooms,population,households,median_income,median_house_value,ocean_proximity
+-121.38,36.39,40.0,4975.0,1765.0,653.0,1080.0,5.5756,173300.0,<1H OCEAN
+-116.69,37.89,35.0,1012.0,,906.0,667.0,7.0879,178100.0,ISLAND
+-118.1,41.15,48.0,1626.0,1442.0,323.0,1219.0,5.3813,212500.0,NEAR OCEAN
+</dataframe>
+
+
+
+
+Update this initial code:
+```python
+# TODO: import the required dependencies
+import pandas as pd
+
+# Write code here
+
+# Declare result var: 
+type (possible values "string", "number", "dataframe", "plot"). Examples: { "type": "string", "value": f"The highest salary is {highest_salary}." } or { "type": "number", "value": 125 } or { "type": "dataframe", "value": pd.DataFrame({...}) } or { "type": "plot", "value": "temp_chart.png" }
+
+```
+
+
+
+### QUERY
+ plot the histogram for this dataset for median_income
+
+Variable `dfs: list[pd.DataFrame]` is already declared.
+
+At the end, declare "result" variable as a dictionary of type and value.
+
+If you are asked to plot a chart, use "matplotlib" for charts, save as png.
+
+
+Generate python code and return full updated code:
+            
+2025-07-18 14:51:44 [INFO] Code generated:
+            ```
+            # TODO: import the required dependencies
+import pandas as pd
+import matplotlib.pyplot as plt
+
+# Assuming dfs is already defined and contains the DataFrame
+# For example, let's say dfs[0] is the DataFrame we want to work with
+df = dfs[0]
+
+# Plotting the histogram for median_income
+plt.figure(figsize=(10, 6))
+plt.hist(df['median_income'].dropna(), bins=30, color='blue', alpha=0.7)
+plt.title('Histogram of Median Income')
+plt.xlabel('Median Income')
+plt.ylabel('Frequency')
+plt.grid(axis='y', alpha=0.75)
+
+# Save the plot as a PNG file
+plt.savefig('median_income_histogram.png')
+plt.close()
+
+# Declare result var:
+result = {
+    "type": "plot",
+    "value": "median_income_histogram.png"
+}
+            ```
+            
+2025-07-18 14:51:44 [INFO] Executing Step 4: CachePopulation
+2025-07-18 14:51:44 [INFO] Executing Step 5: CodeCleaning
+2025-07-18 14:51:44 [INFO] Saving charts to /Users/rahulsohandani/Desktop/conversational-analysis-chatbot/exports/charts/temp_chart.png
+2025-07-18 14:51:44 [INFO] 
+Code running:
+```
+df = dfs[0]
+plt.figure(figsize=(10, 6))
+plt.hist(df['median_income'].dropna(), bins=30, color='blue', alpha=0.7)
+plt.title('Histogram of Median Income')
+plt.xlabel('Median Income')
+plt.ylabel('Frequency')
+plt.grid(axis='y', alpha=0.75)
+plt.savefig('/Users/rahulsohandani/Desktop/conversational-analysis-chatbot/exports/charts/temp_chart.png')
+plt.close()
+result = {'type': 'plot', 'value': '/Users/rahulsohandani/Desktop/conversational-analysis-chatbot/exports/charts/temp_chart.png'}
+        ```
+2025-07-18 14:51:44 [INFO] Executing Step 6: CodeExecution
+2025-07-18 14:51:45 [INFO] Executing Step 7: ResultValidation
+2025-07-18 14:51:45 [INFO] Answer: {'type': 'plot', 'value': '/Users/rahulsohandani/Desktop/conversational-analysis-chatbot/exports/charts/temp_chart.png'}
+2025-07-18 14:51:45 [INFO] Executing Step 8: ResultParsing
