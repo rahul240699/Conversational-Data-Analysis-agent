@@ -1,0 +1,10 @@
+pandas
+numpy==1.26.3
+pandasai
+python-dotenv
+openai
+langchain
+streamlit
+notebook
+ipywidgets
+tqdm
